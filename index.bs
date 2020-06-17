@@ -190,10 +190,8 @@ dictionary HIDConnectionEventInit : EventInit {
     required HIDDevice device;
 };
 
-[
-    Constructor(DOMString type, HIDConnectionEventInit eventInitDict),
-    SecureContext
-] interface HIDConnectionEvent : Event {
+[SecureContext] interface HIDConnectionEvent : Event {
+    constructor(DOMString type, HIDConnectionEventInit eventInitDict);
     [SameObject] readonly attribute HIDDevice device;
 };
 
@@ -203,10 +201,8 @@ dictionary HIDInputReportEventInit : EventInit {
     required DataView data;
 };
 
-[
-    Constructor(DOMString type, HIDInputReportEventInit eventInitDict),
-    SecureContext
-] interface HIDInputReportEvent : Event {
+[SecureContext] interface HIDInputReportEvent : Event {
+    constructor(DOMString type, HIDInputReportEventInit eventInitDict);
     [SameObject] readonly attribute HIDDevice device;
     readonly attribute octet reportId;
     readonly attribute DataView data;
